@@ -1,12 +1,21 @@
-import React, { Component, PropTypes } from "react";
 
-const Users = ({ data, getData }) => (
-  
-  <div>
-    hi from users
-    <button onClick={() => getData()}>Get data</button>
-    <ul>{data.map(user => <li>{user.name}</li>)}</ul>
-  </div>
-);
+import React, { Component } from 'react'
 
-export default Users;
+class Users extends Component {
+
+  handleChange = () => {
+    this.props.getData(this.input.value)
+  }
+
+  render() {
+    const {text } = this.props;
+    return (
+      <div>
+        <input type="text" onChange={this.handleChange} ref={element => this.input = element}></input>
+        {text}
+      </div>
+    )
+  }
+}
+
+export default Users
