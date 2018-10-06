@@ -7,9 +7,9 @@ import sagaMonitor from "./sagaMonitor";
 import Users from "./components/Users";
 import reducer from "./reducers";
 import rootSaga from "./sagas";
-import logger from "redux-logger";
-const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducer, applyMiddleware(sagaMiddleware));
+import logger from 'redux-logger'
+const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
+const store = createStore(reducer, applyMiddleware(sagaMiddleware,logger));
 sagaMiddleware.run(rootSaga);
 
 const action = type => store.dispatch({ type });

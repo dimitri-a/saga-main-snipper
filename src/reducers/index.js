@@ -7,9 +7,9 @@ export default function counter(state = [], action) {
     case "DECREMENT":
       return state - 1;
     case "RECEIVED_DATA":
-      return action.bla;
-    case "GET_DATA":
-      return state;
+
+      //console.log("RECEIVED_DATA,action.json",action.json);
+      return action.hoer;
     default:
       return state;
   }

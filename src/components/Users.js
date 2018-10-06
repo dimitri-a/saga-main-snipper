@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react";
 
 const Users = ({ data, getData }) => (
+  
   <div>
     hi from users
     <button onClick={() => getData()}>Get data</button>
